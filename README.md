@@ -1,4 +1,4 @@
-# Pharm QBank
+# PharmStudy — Drag & Drop Games
 
-360 NBME-style pharmacology questions across 30 topics. React + TS + Vite + Tailwind.
-Deploys to GitHub Pages via Actions. `npm install && npm run build`.
+120 self-contained pharmacology drag-and-drop games across 30 bricks. Pure static HTML.
+Open `pharm_index.html`. Generated from `pharm_data/brick_NN.py` via `python _gen_pharm.py`.
