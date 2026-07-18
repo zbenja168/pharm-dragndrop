@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Metformin Adverse Effects and Mitigation - Drag &amp; Drop Study Game</title>
+    <title>Analgesics and Anti-Inflammatories Across Bricks - Drag &amp; Drop Study Game</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -16,24 +16,24 @@
         .container { max-width: 1600px; margin: 0 auto; }
         h1 {
             text-align: center;
-            color: #3b82f6;
+            color: #06b6d4;
             margin-bottom: 10px;
             font-size: 2.2em;
-            text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
         }
         .subtitle { text-align: center; color: #a0a0a0; margin-bottom: 25px; font-size: 1.1em; }
         .stats-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; flex-wrap: wrap; gap: 15px; }
         .stats { display: flex; gap: 25px; flex-wrap: wrap; }
         .stat-item {
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(6, 182, 212, 0.1);
             padding: 12px 20px; border-radius: 8px;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+            border: 1px solid rgba(6, 182, 212, 0.3);
         }
-        .stat-label { color: #3b82f6; font-weight: bold; margin-right: 8px; }
+        .stat-label { color: #06b6d4; font-weight: bold; margin-right: 8px; }
         .controls { display: flex; gap: 12px; flex-wrap: wrap; }
         .btn { padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.95em; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
-        .btn-primary { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; }
-        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4); }
+        .btn-primary { background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%); color: white; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4); }
         .btn-secondary { background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%); color: white; }
         .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56, 189, 248,0.4); }
         .btn-success { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; }
@@ -45,58 +45,58 @@
             position: sticky; top: 20px;
             background: rgba(10, 15, 28, 0.95);
             border-radius: 12px; padding: 20px;
-            border: 2px solid rgba(59, 130, 246, 0.3);
+            border: 2px solid rgba(6, 182, 212, 0.3);
             box-shadow: 0 8px 32px rgba(0,0,0,0.5);
         }
-        .word-bank-title { color: #3b82f6; font-size: 1.3em; margin-bottom: 15px; text-align: center; font-weight: bold; }
-        .tabs { display: flex; gap: 5px; margin-bottom: 15px; border-bottom: 2px solid rgba(59, 130, 246, 0.3); }
+        .word-bank-title { color: #06b6d4; font-size: 1.3em; margin-bottom: 15px; text-align: center; font-weight: bold; }
+        .tabs { display: flex; gap: 5px; margin-bottom: 15px; border-bottom: 2px solid rgba(6, 182, 212, 0.3); }
         .tab { flex: 1; padding: 10px; background: rgba(255,255,255,0.05); border: none; color: #a0a0a0; cursor: pointer; transition: all 0.3s ease; font-size: 0.9em; font-weight: 600; border-radius: 8px 8px 0 0; }
-        .tab.active { background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: white; }
+        .tab.active { background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%); color: white; }
         .tab:hover:not(.active) { background: rgba(255,255,255,0.1); color: #e4e4e4; }
         .word-bank { min-height: 400px; max-height: 70vh; overflow-y: auto; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 8px; display: none; }
         .word-bank.active { display: block; }
         .word-bank::-webkit-scrollbar { width: 8px; }
         .word-bank::-webkit-scrollbar-track { background: rgba(0,0,0,0.2); border-radius: 4px; }
-        .word-bank::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.5); border-radius: 4px; }
+        .word-bank::-webkit-scrollbar-thumb { background: rgba(6, 182, 212, 0.5); border-radius: 4px; }
         .draggable-item {
             background: linear-gradient(135deg, #1a2235 0%, #131a2a 100%);
             padding: 12px 15px; margin-bottom: 10px; border-radius: 8px; cursor: move;
-            border: 2px solid rgba(59, 130, 246, 0.4); transition: all 0.3s ease;
+            border: 2px solid rgba(6, 182, 212, 0.4); transition: all 0.3s ease;
             font-size: 0.95em; line-height: 1.4;
         }
-        .draggable-item:hover { background: linear-gradient(135deg, #232d44 0%, #1a2235 100%); border-color: #3b82f6; transform: translateX(5px); box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); }
+        .draggable-item:hover { background: linear-gradient(135deg, #232d44 0%, #1a2235 100%); border-color: #06b6d4; transform: translateX(5px); box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); }
         .draggable-item.dragging { opacity: 0.5; transform: rotate(2deg); }
         .cards-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); gap: 20px; }
-        .drug-card { background: rgba(15, 23, 42, 0.95); border-radius: 12px; padding: 20px; border: 2px solid rgba(59, 130, 246, 0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
+        .drug-card { background: rgba(15, 23, 42, 0.95); border-radius: 12px; padding: 20px; border: 2px solid rgba(6, 182, 212, 0.3); box-shadow: 0 8px 32px rgba(0,0,0,0.5); }
         .drug-card-title {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            background: linear-gradient(135deg, #06b6d4 0%, #0e7490 100%);
             color: white; padding: 12px; border-radius: 8px;
             font-size: 1.2em; font-weight: bold; margin-bottom: 15px; text-align: center;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3);
         }
         .drop-zones { display: grid; gap: 12px; }
         .drop-row { display: grid; grid-template-columns: 140px 1fr; gap: 10px; align-items: start; }
-        .drop-label { background: rgba(59, 130, 246, 0.1); padding: 10px; border-radius: 6px; font-weight: 600; color: #3b82f6; font-size: 0.9em; display: flex; align-items: center; border: 1px solid rgba(59, 130, 246, 0.3); }
-        .drop-zone { min-height: 60px; background: rgba(0,0,0,0.3); border: 2px dashed rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 10px; transition: all 0.3s ease; display: flex; flex-direction: column; gap: 8px; }
-        .drop-zone.drag-over { background: rgba(59, 130, 246, 0.2); border-color: #3b82f6; border-style: solid; box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
-        .dropped-item { background: linear-gradient(135deg, #1a2235 0%, #131a2a 100%); padding: 10px 12px; border-radius: 6px; cursor: move; border: 2px solid rgba(59, 130, 246, 0.4); transition: all 0.3s ease; font-size: 0.9em; line-height: 1.4; }
-        .dropped-item:hover { background: linear-gradient(135deg, #232d44 0%, #1a2235 100%); border-color: #3b82f6; }
+        .drop-label { background: rgba(6, 182, 212, 0.1); padding: 10px; border-radius: 6px; font-weight: 600; color: #06b6d4; font-size: 0.9em; display: flex; align-items: center; border: 1px solid rgba(6, 182, 212, 0.3); }
+        .drop-zone { min-height: 60px; background: rgba(0,0,0,0.3); border: 2px dashed rgba(6, 182, 212, 0.3); border-radius: 8px; padding: 10px; transition: all 0.3s ease; display: flex; flex-direction: column; gap: 8px; }
+        .drop-zone.drag-over { background: rgba(6, 182, 212, 0.2); border-color: #06b6d4; border-style: solid; box-shadow: 0 0 20px rgba(6, 182, 212, 0.3); }
+        .dropped-item { background: linear-gradient(135deg, #1a2235 0%, #131a2a 100%); padding: 10px 12px; border-radius: 6px; cursor: move; border: 2px solid rgba(6, 182, 212, 0.4); transition: all 0.3s ease; font-size: 0.9em; line-height: 1.4; }
+        .dropped-item:hover { background: linear-gradient(135deg, #232d44 0%, #1a2235 100%); border-color: #06b6d4; }
         .dropped-item.correct { background: linear-gradient(135deg, #0f9b0f 0%, #0a7c0a 100%); border-color: #00ff00; animation: correctPulse 0.5s ease; }
         .dropped-item.incorrect { background: linear-gradient(135deg, #c41e3a 0%, #9a1829 100%); border-color: #ff4444; animation: incorrectShake 0.5s ease; }
         @keyframes correctPulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05);box-shadow:0 0 20px rgba(0,255,0,0.5)} }
         @keyframes incorrectShake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-5px)} 75%{transform:translateX(5px)} }
         .summary-modal { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.8); z-index: 1000; justify-content: center; align-items: center; padding: 20px; }
         .summary-modal.active { display: flex; }
-        .summary-content { background: linear-gradient(135deg, #0a0f1c 0%, #0f1729 100%); border-radius: 12px; padding: 30px; max-width: 900px; max-height: 90vh; overflow-y: auto; border: 2px solid rgba(59, 130, 246, 0.5); box-shadow: 0 10px 50px rgba(0,0,0,0.8); }
+        .summary-content { background: linear-gradient(135deg, #0a0f1c 0%, #0f1729 100%); border-radius: 12px; padding: 30px; max-width: 900px; max-height: 90vh; overflow-y: auto; border: 2px solid rgba(6, 182, 212, 0.5); box-shadow: 0 10px 50px rgba(0,0,0,0.8); }
         .summary-content::-webkit-scrollbar { width: 10px; }
         .summary-content::-webkit-scrollbar-track { background: rgba(0,0,0,0.3); border-radius: 5px; }
-        .summary-content::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.5); border-radius: 5px; }
-        .summary-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid rgba(59, 130, 246, 0.3); }
-        .summary-title { color: #3b82f6; font-size: 1.8em; font-weight: bold; }
+        .summary-content::-webkit-scrollbar-thumb { background: rgba(6, 182, 212, 0.5); border-radius: 5px; }
+        .summary-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 2px solid rgba(6, 182, 212, 0.3); }
+        .summary-title { color: #06b6d4; font-size: 1.8em; font-weight: bold; }
         .close-btn { background: rgba(255,68,68,0.2); border: 2px solid #ff4444; color: #ff4444; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.3s ease; }
         .close-btn:hover { background: #ff4444; color: white; }
-        .summary-drug { margin-bottom: 25px; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; border-left: 4px solid #3b82f6; }
-        .summary-drug-title { color: #3b82f6; font-size: 1.3em; margin-bottom: 15px; font-weight: bold; }
+        .summary-drug { margin-bottom: 25px; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; border-left: 4px solid #06b6d4; }
+        .summary-drug-title { color: #06b6d4; font-size: 1.3em; margin-bottom: 15px; font-weight: bold; }
         .summary-category { margin-bottom: 12px; }
         .summary-category-title { color: #38bdf8; font-weight: 600; margin-bottom: 5px; font-size: 1.05em; }
         .summary-category-content { color: #e4e4e4; padding-left: 15px; line-height: 1.6; }
@@ -117,11 +117,11 @@
 </head>
 <body>
 <a href="pharm_index.html" style="position:fixed;top:12px;left:12px;z-index:9999;background:rgba(0,0,0,0.55);color:#94a3b8;border:1px solid rgba(255,255,255,0.13);border-radius:20px;padding:5px 13px;font-size:.72rem;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(8px);transition:.15s;letter-spacing:.3px;" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='rgba(255,255,255,0.13)'">&#8592; Index</a>
-<div style="position:fixed;top:12px;right:12px;z-index:9999;display:flex;gap:8px;"><a href="pharm_127_glp1_receptor_agonist_effects.html" style="background:rgba(0,0,0,0.72);color:#e2e8f0;border:1px solid rgba(255,255,255,0.22);border-radius:22px;padding:8px 18px;font-size:.85rem;font-weight:600;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(10px);transition:.15s;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.5)';this.style.background='rgba(0,0,0,0.88)'" onmouseout="this.style.color='#e2e8f0';this.style.borderColor='rgba(255,255,255,0.22)';this.style.background='rgba(0,0,0,0.72)'">&#8592; Prev</a><a href="pharm_129_pharmacokinetic_principles.html" style="background:rgba(0,0,0,0.72);color:#e2e8f0;border:1px solid rgba(255,255,255,0.22);border-radius:22px;padding:8px 18px;font-size:.85rem;font-weight:600;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(10px);transition:.15s;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.5)';this.style.background='rgba(0,0,0,0.88)'" onmouseout="this.style.color='#e2e8f0';this.style.borderColor='rgba(255,255,255,0.22)';this.style.background='rgba(0,0,0,0.72)'">Next &#8594;</a></div>
+<div style="position:fixed;top:12px;right:12px;z-index:9999;display:flex;gap:8px;"><a href="pharm_131_cardiovascular_vasodilators.html" style="background:rgba(0,0,0,0.72);color:#e2e8f0;border:1px solid rgba(255,255,255,0.22);border-radius:22px;padding:8px 18px;font-size:.85rem;font-weight:600;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(10px);transition:.15s;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.5)';this.style.background='rgba(0,0,0,0.88)'" onmouseout="this.style.color='#e2e8f0';this.style.borderColor='rgba(255,255,255,0.22)';this.style.background='rgba(0,0,0,0.72)'">&#8592; Prev</a><a href="pharm_133_toxicities_and_antidotes.html" style="background:rgba(0,0,0,0.72);color:#e2e8f0;border:1px solid rgba(255,255,255,0.22);border-radius:22px;padding:8px 18px;font-size:.85rem;font-weight:600;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(10px);transition:.15s;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.5)';this.style.background='rgba(0,0,0,0.88)'" onmouseout="this.style.color='#e2e8f0';this.style.borderColor='rgba(255,255,255,0.22)';this.style.background='rgba(0,0,0,0.72)'">Next &#8594;</a></div>
 
     <div class="container">
-        <h1>🩺 Metformin Adverse Effects and Mitigation</h1>
-        <p class="subtitle">Match each metformin adverse effect to its cause and the strategy that reduces it</p>
+        <h1>⚗️ Analgesics and Anti-Inflammatories Across Bricks</h1>
+        <p class="subtitle">Match each analgesic or anti-inflammatory drug to its mechanism, key toxicity, and antidote or management.</p>
         <div class="stats-controls">
             <div class="stats">
                 <div class="stat-item"><span class="stat-label">Score:</span><span id="score">0</span>/<span id="total">0</span></div>
@@ -138,13 +138,13 @@
             <div class="word-bank-container">
                 <div class="word-bank-title">&#x1F4DA; Word Bank</div>
                 <div class="tabs">
-                    <button class="tab active" onclick="switchTab('adverse_effect', this)">Adverse Effect</button>
-                    <button class="tab" onclick="switchTab('cause', this)">Cause</button>
-                    <button class="tab" onclick="switchTab('mitigation_or_note', this)">Mitigation or Note</button>
+                    <button class="tab active" onclick="switchTab('mechanism', this)">Mechanism</button>
+                    <button class="tab" onclick="switchTab('key_toxicity', this)">Key Toxicity</button>
+                    <button class="tab" onclick="switchTab('antidote_or_management', this)">Antidote or Management</button>
                 </div>
-                <div id="adverse_effect-bank" class="word-bank active"></div>
-                <div id="cause-bank" class="word-bank"></div>
-                <div id="mitigation_or_note-bank" class="word-bank"></div>
+                <div id="mechanism-bank" class="word-bank active"></div>
+                <div id="key_toxicity-bank" class="word-bank"></div>
+                <div id="antidote_or_management-bank" class="word-bank"></div>
             </div>
             <div class="cards-container" id="cards-container"></div>
         </div>
@@ -159,29 +159,39 @@
         </div>
     </div>
     <script>
-        const categoryKeys = ["adverse_effect", "cause", "mitigation_or_note"];
-        const categoryLabels = {"adverse_effect": "Adverse Effect", "cause": "Cause", "mitigation_or_note": "Mitigation or Note"};
+        const categoryKeys = ["mechanism", "key_toxicity", "antidote_or_management"];
+        const categoryLabels = {"mechanism": "Mechanism", "key_toxicity": "Key Toxicity", "antidote_or_management": "Antidote or Management"};
 
         const gameData = {
-            "GI upset": {
-                "adverse_effect": "Nausea, diarrhea, flatulence, abdominal pain",
-                "cause": "Common effect just after starting therapy",
-                "mitigation_or_note": "Start at lowest dose, take with food, titrate slowly, or use extended-release"
+            "Ibuprofen (Brick 4)": {
+                "mechanism": "Reversible nonselective inhibitor of COX-1 and COX-2 enzymes",
+                "key_toxicity": "Gastric ulcers, acute kidney injury, and fluid retention",
+                "antidote_or_management": "Stop the NSAID, add a proton pump inhibitor, and support renal perfusion"
             },
-            "Metallic taste": {
-                "adverse_effect": "Persistent metallic taste in the mouth",
-                "cause": "Metformin is secreted in the saliva",
-                "mitigation_or_note": "Self-resolves within a few weeks of consistent use"
+            "Aspirin (Brick 7)": {
+                "mechanism": "Irreversible covalent acetylation of COX-1 and COX-2 enzymes",
+                "key_toxicity": "Tinnitus and mixed respiratory alkalosis with metabolic acidosis in overdose",
+                "antidote_or_management": "Alkalinize urine with sodium bicarbonate and give dialysis if severe"
             },
-            "Vitamin B12 deficiency": {
-                "adverse_effect": "Anemia and neuropathy from B12 deficiency",
-                "cause": "Impaired B12 absorption in the terminal ileum with long-term use",
-                "mitigation_or_note": "Incidence about 7 percent; mitigate with B12 supplementation"
+            "Acetaminophen (Brick 11)": {
+                "mechanism": "Central COX inhibition giving analgesia and antipyresis without anti-inflammation",
+                "key_toxicity": "Dose-dependent hepatic necrosis from the toxic NAPQI metabolite",
+                "antidote_or_management": "N-acetylcysteine replenishes glutathione to detoxify NAPQI"
             },
-            "Lactic acidosis": {
-                "adverse_effect": "Rare but potentially fatal lactic acidosis",
-                "cause": "Inhibition of mitochondrial electron transport with impaired lactate clearance",
-                "mitigation_or_note": "Dose-adjust for renal function; contraindicated when eGFR is below 30"
+            "Prednisone (Brick 13)": {
+                "mechanism": "Corticosteroid inhibiting phospholipase A2 and broad inflammatory gene transcription",
+                "key_toxicity": "Cushingoid features, hyperglycemia, osteoporosis, and adrenal suppression",
+                "antidote_or_management": "Taper slowly to allow recovery of the hypothalamic-pituitary-adrenal axis"
+            },
+            "Morphine (Brick 30)": {
+                "mechanism": "Full mu opioid receptor agonist reducing pain transmission and perception",
+                "key_toxicity": "Respiratory depression, miosis, and constipation with overdose",
+                "antidote_or_management": "Naloxone reverses opioid effects and supportive ventilation as needed"
+            },
+            "Naloxone (Brick 29)": {
+                "mechanism": "Competitive mu opioid receptor antagonist with rapid parenteral onset",
+                "key_toxicity": "Precipitates acute withdrawal with agitation and pain in dependent patients",
+                "antidote_or_management": "Redose because short half-life may lapse before long opioid clears"
             }
         };
 
@@ -356,7 +366,7 @@
                 const correctItem = Array.from(document.querySelectorAll('.draggable-item')).find(i =>
                     i.dataset.entity === entity && i.dataset.category === cat);
                 if (correctItem) {
-                    correctItem.style.outline = "2px solid #3b82f6";
+                    correctItem.style.outline = "2px solid #06b6d4";
                     correctItem.style.animation = 'correctPulse 1s ease 3';
                     correctItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     setTimeout(() => { correctItem.style.animation = ''; correctItem.style.outline = ''; }, 3000);
