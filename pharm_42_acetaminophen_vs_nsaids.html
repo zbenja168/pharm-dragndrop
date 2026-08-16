@@ -159,29 +159,23 @@
         </div>
     </div>
     <script>
-        const categoryKeys = ["acetaminophen", "nsaids"];
-        const categoryLabels = {"acetaminophen": "Acetaminophen", "nsaids": "NSAIDs"};
+        const categoryKeys = ["anti_inflammatory_action", "main_site_of_cox_inhibition", "effect_on_platelets_clotting", "classified_as_an_nsaid", "analgesic_antipyretic_use"];
+        const categoryLabels = {"anti_inflammatory_action": "Anti-inflammatory action", "main_site_of_cox_inhibition": "Main site of COX inhibition", "effect_on_platelets_clotting": "Effect on platelets / clotting", "classified_as_an_nsaid": "Classified as an NSAID", "analgesic_antipyretic_use": "Analgesic / antipyretic use"};
 
         const gameData = {
-            "Anti-inflammatory action": {
-                "acetaminophen": "Weak; only limited peripheral COX inhibition",
-                "nsaids": "Strong; robust peripheral COX inhibition"
+            "Acetaminophen": {
+                "anti_inflammatory_action": "Weak; only limited peripheral COX inhibition",
+                "main_site_of_cox_inhibition": "Central (CNS); oxidized by brain CYP450 to inhibit COX",
+                "effect_on_platelets_clotting": "None; high platelet peroxidase blocks its COX effect",
+                "classified_as_an_nsaid": "No; not classified as an NSAID",
+                "analgesic_antipyretic_use": "Yes; raises pain threshold via central COX inhibition"
             },
-            "Main site of COX inhibition": {
-                "acetaminophen": "Central (CNS); oxidized by brain CYP450 to inhibit COX",
-                "nsaids": "Peripheral tissues, with central effects as well"
-            },
-            "Effect on platelets / clotting": {
-                "acetaminophen": "None; high platelet peroxidase blocks its COX effect",
-                "nsaids": "Aspirin is antithrombotic by blocking platelet thromboxane"
-            },
-            "Classified as an NSAID": {
-                "acetaminophen": "No; not classified as an NSAID",
-                "nsaids": "Yes, by definition"
-            },
-            "Analgesic / antipyretic use": {
-                "acetaminophen": "Yes; raises pain threshold via central COX inhibition",
-                "nsaids": "Yes; achieved through COX inhibition"
+            "NSAIDs": {
+                "anti_inflammatory_action": "Strong; robust peripheral COX inhibition",
+                "main_site_of_cox_inhibition": "Peripheral tissues, with central effects as well",
+                "effect_on_platelets_clotting": "Aspirin is antithrombotic by blocking platelet thromboxane",
+                "classified_as_an_nsaid": "Yes, by definition",
+                "analgesic_antipyretic_use": "Yes; achieved through COX inhibition"
             }
         };
 
