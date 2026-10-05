@@ -37,6 +37,11 @@
   a.card:hover{border-color:var(--c,#f43f5e);background:var(--surface2);transform:translateY(-2px);box-shadow:0 6px 24px rgba(0,0,0,.5);}
   .num{flex-shrink:0;background:var(--c,#f43f5e);color:#fff;border-radius:5px;padding:2px 5px;font-size:.6rem;font-weight:800;margin-top:1px;opacity:.9;letter-spacing:.3px;}
   .ctitle{font-size:.75rem;line-height:1.45;color:var(--text);}
+  .week{margin-bottom:44px;}
+  .week-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 18px;padding:14px 18px;border-radius:12px;background:linear-gradient(135deg,rgba(244,63,94,.16),rgba(244,63,94,.04));border:1px solid rgba(244,63,94,.28);}
+  .week-label{font-size:1.15rem;font-weight:800;letter-spacing:-.01em;color:#f43f5e;}
+  .week-count{margin-left:auto;font-size:.7rem;color:var(--muted);white-space:nowrap;}
+  .sess-head{margin:6px 0 12px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
 </style>
   <script defer src="https://activetransport.app/static/tool-track.js"></script>
 </head>
@@ -59,6 +64,13 @@
 <main>
 <div class="no-results" id="noResults">No games match your search.</div>
 
+<div class="week" data-week>
+  <div class="week-head">
+    <span class="week-label">Week 1</span>
+    <span class="week-count">11 lectures &middot; 44 games</span>
+  </div>
+
+<div class="sess-head" data-sess>Session 1</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">🫘</span>
@@ -129,6 +141,7 @@
   </div>
 </section>
 
+<div class="sess-head" data-sess>Session 2</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">🧪</span>
@@ -171,6 +184,7 @@
   </div>
 </section>
 
+<div class="sess-head" data-sess>Session 3</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">🫘</span>
@@ -213,6 +227,15 @@
   </div>
 </section>
 
+</div>
+
+<div class="week" data-week>
+  <div class="week-head">
+    <span class="week-label">Week 2</span>
+    <span class="week-count">8 lectures &middot; 32 games</span>
+  </div>
+
+<div class="sess-head" data-sess>Session 1</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">⚗️</span>
@@ -269,6 +292,7 @@
   </div>
 </section>
 
+<div class="sess-head" data-sess>Session 2</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">💊</span>
@@ -297,6 +321,7 @@
   </div>
 </section>
 
+<div class="sess-head" data-sess>Session 3</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">🫘</span>
@@ -325,6 +350,15 @@
   </div>
 </section>
 
+</div>
+
+<div class="week" data-week>
+  <div class="week-head">
+    <span class="week-label">Week 3</span>
+    <span class="week-count">8 lectures &middot; 32 games</span>
+  </div>
+
+<div class="sess-head" data-sess>Session 1</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">⚗️</span>
@@ -367,6 +401,7 @@
   </div>
 </section>
 
+<div class="sess-head" data-sess>Session 2</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">💊</span>
@@ -395,6 +430,7 @@
   </div>
 </section>
 
+<div class="sess-head" data-sess>Session 3</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">🫘</span>
@@ -437,6 +473,15 @@
   </div>
 </section>
 
+</div>
+
+<div class="week" data-week>
+  <div class="week-head">
+    <span class="week-label">Week 4</span>
+    <span class="week-count">5 lectures &middot; 20 games</span>
+  </div>
+
+<div class="sess-head" data-sess>Session 1</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">⚗️</span>
@@ -479,6 +524,7 @@
   </div>
 </section>
 
+<div class="sess-head" data-sess>Session 2</div>
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">💊</span>
@@ -507,6 +553,14 @@
   </div>
 </section>
 
+</div>
+
+<div class="week" data-week>
+  <div class="week-head">
+    <span class="week-label">Review & Synthesis</span>
+    <span class="week-count">1 lecture &middot; 6 games</span>
+  </div>
+
 <section class="section" data-section>
   <div class="section-head">
     <span class="section-icon">🫘</span>
@@ -522,6 +576,9 @@
     <a class="card" href="pharm_134_receptor_signaling_pathways.html" style="--c:#38bdf8"><span class="num">134</span><span class="ctitle">Receptor Signaling and Second Messengers Across Bricks</span></a>
   </div>
 </section>
+
+</div>
+
 
 </main>
 
@@ -557,5 +614,28 @@ document.getElementById('search').addEventListener('input', function() {
   </span>
 </a>
 <style>@keyframes atBadgeParticle{0%{top:-2px;opacity:0}15%{opacity:1}50%{top:50%;opacity:1}85%{opacity:1}100%{top:100%;opacity:0}}#at-badge-root:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(34,211,238,.18)}</style>
+<script>
+// Week / Session headers (class schedule): hide any header whose sections are
+// all filtered out by the search box. Registered after the search handler.
+(function () {
+  var box = document.getElementById('search');
+  if (!box) return;
+  function vis(el) { return el.style.display !== 'none'; }
+  box.addEventListener('input', function () {
+    document.querySelectorAll('[data-sess]').forEach(function (h) {
+      var n = h.nextElementSibling, any = false;
+      while (n && !n.hasAttribute('data-sess')) {
+        if (n.hasAttribute('data-section') && vis(n)) { any = true; break; }
+        n = n.nextElementSibling;
+      }
+      h.style.display = any ? '' : 'none';
+    });
+    document.querySelectorAll('[data-week]').forEach(function (w) {
+      var any = Array.prototype.some.call(w.querySelectorAll('[data-section]'), vis);
+      w.style.display = any ? '' : 'none';
+    });
+  });
+})();
+</script>
 </body>
 </html>
