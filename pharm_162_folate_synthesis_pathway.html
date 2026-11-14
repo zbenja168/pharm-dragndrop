@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drug Toxicities and Antidotes Across Bricks - Drag &amp; Drop Study Game</title>
+    <title>The Bacterial Folate Pathway - Drag &amp; Drop Study Game</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -34,8 +34,8 @@
         .btn { padding: 12px 24px; border: none; border-radius: 8px; cursor: pointer; font-size: 0.95em; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
         .btn-primary { background: linear-gradient(135deg, #ec4899 0%, #be185d 100%); color: white; }
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4); }
-        .btn-secondary { background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%); color: white; }
-        .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(56, 189, 248,0.4); }
+        .btn-secondary { background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; }
+        .btn-secondary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(245,158,11,0.4); }
         .btn-success { background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; }
         .btn-success:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(16,185,129,0.4); }
         .btn-danger { background: linear-gradient(135deg, #ef4444 0%, #b91c1c 100%); color: white; }
@@ -98,7 +98,7 @@
         .summary-drug { margin-bottom: 25px; background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; border-left: 4px solid #ec4899; }
         .summary-drug-title { color: #ec4899; font-size: 1.3em; margin-bottom: 15px; font-weight: bold; }
         .summary-category { margin-bottom: 12px; }
-        .summary-category-title { color: #38bdf8; font-weight: 600; margin-bottom: 5px; font-size: 1.05em; }
+        .summary-category-title { color: #f59e0b; font-weight: 600; margin-bottom: 5px; font-size: 1.05em; }
         .summary-category-content { color: #e4e4e4; padding-left: 15px; line-height: 1.6; }
         @media (max-width: 1200px) {
             .main-content { grid-template-columns: 1fr; }
@@ -114,16 +114,16 @@
             .drop-label { text-align: center; }
         }
     </style>
-  <script defer src="https://activetransport.app/static/tool-track.js"></script>
+<script defer src="https://activetransport.app/static/tool-track.js"></script>
 </head>
 <body>
 <a href="pharm_index.html" style="position:fixed;top:12px;left:12px;z-index:9999;background:rgba(0,0,0,0.55);color:#94a3b8;border:1px solid rgba(255,255,255,0.13);border-radius:20px;padding:5px 13px;font-size:.72rem;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(8px);transition:.15s;letter-spacing:.3px;" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='rgba(255,255,255,0.13)'">&#8592; Index</a>
-<div id="at-nav" style="position:fixed;top:12px;right:12px;z-index:9999;display:flex;gap:8px;align-items:center;"><a href="pharm_164_analgesics_and_antiinflammatories.html" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='rgba(255,255,255,0.13)'" title="Previous game" style="background:rgba(0,0,0,0.55);color:#94a3b8;border:1px solid rgba(255,255,255,0.13);border-radius:20px;padding:5px 13px;font-size:.72rem;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(8px);transition:.15s;letter-spacing:.3px;;white-space:nowrap;">&#8592; Prev</a><a href="pharm_166_receptor_signaling_pathways.html" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='rgba(255,255,255,0.13)'" title="Next game" style="background:rgba(0,0,0,0.55);color:#94a3b8;border:1px solid rgba(255,255,255,0.13);border-radius:20px;padding:5px 13px;font-size:.72rem;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(8px);transition:.15s;letter-spacing:.3px;;white-space:nowrap;">Next &#8594;</a></div>
-<div style="position:fixed;top:12px;right:12px;z-index:9999;display:flex;gap:8px;"><a href="pharm_132_analgesics_and_antiinflammatories.html" style="background:rgba(0,0,0,0.72);color:#e2e8f0;border:1px solid rgba(255,255,255,0.22);border-radius:22px;padding:8px 18px;font-size:.85rem;font-weight:600;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(10px);transition:.15s;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.5)';this.style.background='rgba(0,0,0,0.88)'" onmouseout="this.style.color='#e2e8f0';this.style.borderColor='rgba(255,255,255,0.22)';this.style.background='rgba(0,0,0,0.72)'">&#8592; Prev</a><a href="pharm_134_receptor_signaling_pathways.html" style="background:rgba(0,0,0,0.72);color:#e2e8f0;border:1px solid rgba(255,255,255,0.22);border-radius:22px;padding:8px 18px;font-size:.85rem;font-weight:600;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(10px);transition:.15s;display:inline-flex;align-items:center;gap:6px;" onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.5)';this.style.background='rgba(0,0,0,0.88)'" onmouseout="this.style.color='#e2e8f0';this.style.borderColor='rgba(255,255,255,0.22)';this.style.background='rgba(0,0,0,0.72)'">Next &#8594;</a></div>
+<div id="at-nav" style="position:fixed;top:12px;right:12px;z-index:9999;display:flex;gap:8px;align-items:center;"><a href="pharm_161_meet_the_folate_drugs.html" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='rgba(255,255,255,0.13)'" title="Previous game" style="background:rgba(0,0,0,0.55);color:#94a3b8;border:1px solid rgba(255,255,255,0.13);border-radius:20px;padding:5px 13px;font-size:.72rem;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(8px);transition:.15s;letter-spacing:.3px;;white-space:nowrap;">&#8592; Prev</a><a href="pharm_163_sulfonamide_pharmacokinetics.html" onmouseover="this.style.color='#f1f5f9';this.style.borderColor='rgba(255,255,255,0.3)'" onmouseout="this.style.color='#94a3b8';this.style.borderColor='rgba(255,255,255,0.13)'" title="Next game" style="background:rgba(0,0,0,0.55);color:#94a3b8;border:1px solid rgba(255,255,255,0.13);border-radius:20px;padding:5px 13px;font-size:.72rem;text-decoration:none;font-family:'Segoe UI',sans-serif;backdrop-filter:blur(8px);transition:.15s;letter-spacing:.3px;;white-space:nowrap;">Next &#8594;</a></div>
+
 
     <div class="container">
-        <h1>🔬 Drug Toxicities and Antidotes Across Bricks</h1>
-        <p class="subtitle">Match each drug or class to its culprit mechanism, characteristic toxicity, and antidote or management.</p>
+        <h1>🔬 The Bacterial Folate Pathway</h1>
+        <p class="subtitle">Match each pathway component to its role and how the drugs affect it</p>
         <div class="stats-controls">
             <div class="stats">
                 <div class="stat-item"><span class="stat-label">Score:</span><span id="score">0</span>/<span id="total">0</span></div>
@@ -140,13 +140,11 @@
             <div class="word-bank-container">
                 <div class="word-bank-title">&#x1F4DA; Word Bank</div>
                 <div class="tabs">
-                    <button class="tab active" onclick="switchTab('culprit_mechanism', this)">Culprit Mechanism</button>
-                    <button class="tab" onclick="switchTab('characteristic_toxicity', this)">Characteristic Toxicity</button>
-                    <button class="tab" onclick="switchTab('antidote_or_management', this)">Antidote or Management</button>
+                    <button class="tab active" onclick="switchTab('role_in_pathway', this)">Role in Pathway</button>
+                    <button class="tab" onclick="switchTab('drug_connection', this)">Drug Connection</button>
                 </div>
-                <div id="culprit_mechanism-bank" class="word-bank active"></div>
-                <div id="characteristic_toxicity-bank" class="word-bank"></div>
-                <div id="antidote_or_management-bank" class="word-bank"></div>
+                <div id="role_in_pathway-bank" class="word-bank active"></div>
+                <div id="drug_connection-bank" class="word-bank"></div>
             </div>
             <div class="cards-container" id="cards-container"></div>
         </div>
@@ -161,39 +159,29 @@
         </div>
     </div>
     <script>
-        const categoryKeys = ["culprit_mechanism", "characteristic_toxicity", "antidote_or_management"];
-        const categoryLabels = {"culprit_mechanism": "Culprit Mechanism", "characteristic_toxicity": "Characteristic Toxicity", "antidote_or_management": "Antidote or Management"};
+        const categoryKeys = ["role_in_pathway", "drug_connection"];
+        const categoryLabels = {"role_in_pathway": "Role in Pathway", "drug_connection": "Drug Connection"};
 
         const gameData = {
-            "Aspirin (Brick 7)": {
-                "culprit_mechanism": "Salicylate uncouples oxidative phosphorylation and stimulates the respiratory center",
-                "characteristic_toxicity": "Tinnitus with early respiratory alkalosis then anion-gap metabolic acidosis",
-                "antidote_or_management": "Sodium bicarbonate to alkalinize urine and hemodialysis in severe cases"
+            "PABA": {
+                "role_in_pathway": "Substrate bacteria take in or produce",
+                "drug_connection": "Structurally mimicked by sulfonamides"
             },
-            "Acetaminophen (Brick 11)": {
-                "culprit_mechanism": "Excess NAPQI metabolite depletes hepatic glutathione stores",
-                "characteristic_toxicity": "Centrilobular hepatic necrosis with rising transaminases after a delay",
-                "antidote_or_management": "N-acetylcysteine restores glutathione and is most effective given early"
+            "Dihydropteroate synthase (DHPS)": {
+                "role_in_pathway": "Joins PABA with pteridine",
+                "drug_connection": "Competitively inhibited by sulfonamides"
             },
-            "Corticosteroids (Brick 13)": {
-                "culprit_mechanism": "Chronic exogenous glucocorticoid suppresses endogenous cortisol production",
-                "characteristic_toxicity": "Iatrogenic Cushing syndrome and adrenal crisis if stopped abruptly",
-                "antidote_or_management": "Gradual dose taper and stress-dose steroids during acute illness"
+            "Dihydropteroic acid": {
+                "role_in_pathway": "DHPS product that is converted to DHF",
+                "drug_connection": "Not formed when sulfonamides block step 2"
             },
-            "Statins (Brick 15)": {
-                "culprit_mechanism": "HMG-CoA reductase inhibition can injure skeletal myocytes",
-                "characteristic_toxicity": "Myopathy and rhabdomyolysis with elevated creatine kinase and myoglobinuria",
-                "antidote_or_management": "Discontinue the statin, hydrate aggressively, and avoid interacting CYP inhibitors"
+            "Dihydrofolate reductase": {
+                "role_in_pathway": "Converts DHF to tetrahydrofolic acid",
+                "drug_connection": "Inhibited by trimethoprim and pyrimethamine"
             },
-            "Organophosphates (Brick 28)": {
-                "culprit_mechanism": "Irreversible acetylcholinesterase inhibition floods synapses with acetylcholine",
-                "characteristic_toxicity": "Cholinergic crisis with salivation, lacrimation, urination, defecation, and bronchospasm",
-                "antidote_or_management": "Atropine blocks muscarinic effects and pralidoxime reactivates the enzyme before aging"
-            },
-            "Metformin (Brick 32)": {
-                "culprit_mechanism": "Biguanide inhibits hepatic gluconeogenesis and promotes anaerobic metabolism",
-                "characteristic_toxicity": "Rare life-threatening lactic acidosis, especially in renal impairment",
-                "antidote_or_management": "Hold the drug, give supportive care, and use hemodialysis for severe acidosis"
+            "Tetrahydrofolic acid (THF)": {
+                "role_in_pathway": "Required to make DNA, RNA and proteins",
+                "drug_connection": "Depleted most when both enzymes are blocked"
             }
         };
 
