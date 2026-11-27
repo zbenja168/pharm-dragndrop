@@ -16,11 +16,6 @@ window.AT_SITE = {
    "label": "Games",
    "url": "https://zbenja168.github.io/pharm-dragndrop/",
    "current": true
-  },
-  {
-   "label": "Picture QBank",
-   "url": "https://zbenja168.github.io/pharm-picqbank/",
-   "current": false
   }
  ],
  "home": "pharm_index.html"
