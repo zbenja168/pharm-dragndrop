@@ -179,7 +179,7 @@ def make_html(game, prev_file, next_file, idx_in_palette):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{esc(game['title'])} - Drag &amp; Drop Study Game</title>
+    <title>{esc(game['title'])} · Pharmacology Games · Active Transport</title>
     <style>
         * {{ margin: 0; padding: 0; box-sizing: border-box; }}
         body {{
@@ -297,7 +297,7 @@ def make_html(game, prev_file, next_file, idx_in_palette):
 {nav_right}
 
     <div class="container">
-        <h1>{icon} {esc(game['title'])}</h1>
+        <h1>{esc(game['title'])}</h1>
         <p class="subtitle">{esc(game['subtitle'])}</p>
         <div class="stats-controls">
             <div class="stats">
@@ -313,7 +313,7 @@ def make_html(game, prev_file, next_file, idx_in_palette):
         </div>
         <div class="main-content">
             <div class="word-bank-container">
-                <div class="word-bank-title">&#x1F4DA; Word Bank</div>
+                <div class="word-bank-title">Word Bank</div>
                 <div class="tabs">
                     {tab_buttons}
                 </div>
@@ -325,7 +325,7 @@ def make_html(game, prev_file, next_file, idx_in_palette):
     <div class="summary-modal" id="summaryModal">
         <div class="summary-content">
             <div class="summary-header">
-                <div class="summary-title">&#x1F4D6; Complete Summary</div>
+                <div class="summary-title">Complete Summary</div>
                 <button class="close-btn" onclick="closeSummary()">Close</button>
             </div>
             <div id="summaryContent"></div>
@@ -652,7 +652,7 @@ def main():
         sections_html += f'''
 <section class="section" data-section>
   <div class="section-head">
-    <span class="section-icon">{sec["icon"]}</span>
+    <span class="section-icon"></span>
     <span class="section-title">{esc(sec["title"])}</span>
     <span class="section-badge">{len(sec["games"])} game{"s" if len(sec["games"]) != 1 else ""}</span>
   </div>
@@ -669,7 +669,7 @@ def main():
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PharmStudy &ndash; Drag &amp; Drop Games</title>
+<title>Pharmacology Games · Active Transport</title>
 <style>
   :root{{--bg:#0a0805;--surface:#14110b;--surface2:#1d1812;--text:#f1f5f9;--muted:#94a3b8;--border:rgba(255,255,255,0.07);}}
   *{{box-sizing:border-box;margin:0;padding:0;}}
@@ -708,9 +708,7 @@ def main():
 </head>
 <body>
 
-<header>
-  <h1>PharmStudy</h1>
-  <p>Drag &amp; Drop Study Games &nbsp;&middot;&nbsp; Pharmacology</p>
+<header class="at-hero">
   <div class="pills">
     <span class="pill"><b>{total_games}</b> games</span>
     <span class="pill"><b>{total_bricks}</b> source bricks</span>
@@ -752,5 +750,18 @@ document.getElementById('search').addEventListener('input', function() {{
     print("Created: renal_index.html")
 
 
+def _sync_shared_look():
+    """Primary Active Transport shared header/styles (C:/study-tools/_shared/STYLE_SPEC.md).
+    Re-applies the shared header, promo card and title/emoji rules to the pages just
+    written, so a regeneration keeps the standard look. Markup only, never game data."""
+    import subprocess
+    sync = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_shared", "sync_static.py")
+    if os.path.exists(sync):
+        subprocess.run([sys.executable, sync, os.path.dirname(os.path.abspath(__file__))], check=True)
+    else:
+        print("WARNING: _shared/sync_static.py not found; pages lack the shared header")
+
+
 if __name__ == "__main__":
     main()
+    _sync_shared_look()
