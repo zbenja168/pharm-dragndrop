@@ -70,6 +70,7 @@ BRICK = {
         },
         {
             "slug": "metoclopramide_effects",
+            "images": {"Torsades de pointes": "pic_img/repic-284.jpg"},
             "title": "Metoclopramide: Beyond Nausea",
             "subtitle": "Match each metoclopramide effect to its cause and clinical significance",
             "categories": ["Underlying Cause", "Clinical Significance"],

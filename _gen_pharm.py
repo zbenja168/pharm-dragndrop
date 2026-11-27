@@ -89,6 +89,19 @@ def slugify_key(s):
 # Per-game HTML
 # ────────────────────────────────────────────
 
+
+def pics_tag(game):
+    """Vetted pictures on this game's items (the data file's "images" field): the shared
+    at-dnd-pics.js tag from C:/study-tools/_shared/dnd_pics.py, or "" (sync_static re-derives it)."""
+    if not game.get("images"):
+        return ""
+    try:
+        sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "_shared"))
+        from dnd_pics import tag_for
+        return tag_for({k: v for k, v in game["images"].items() if k in game["gameData"]})
+    except ImportError:
+        return ""
+
 def make_html(game, prev_file, next_file, idx_in_palette):
     accent, dark, darker, rgb = PALETTE[idx_in_palette % len(PALETTE)]
     r, g, b = rgb
@@ -291,7 +304,7 @@ def make_html(game, prev_file, next_file, idx_in_palette):
         }}
     </style>
 <script defer src="https://activetransport.app/static/tool-track.js"></script>
-</head>
+{pics_tag(game)}</head>
 <body>
 {index_link}
 {nav_right}
@@ -598,6 +611,7 @@ def main():
                 "categoryKeys": cat_keys,
                 "categoryLabels": cat_labels,
                 "gameData": new_data,
+                "images": game.get("images") or {},
                 "brick_num": brick["brick_num"],
                 "brick_title": brick["brick_title"],
             })

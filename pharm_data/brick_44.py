@@ -37,6 +37,7 @@ BRICK = {
         },
         {
             "slug": "raas_inhibitor_adverse_effects",
+            "images": {"Angioedema": "pic_img/msk-49-026.jpg"},
             "title": "Adverse Effects of ACE-Is and ARBs",
             "subtitle": "Match each adverse effect to its mechanism, who is at risk, and how it is handled",
             "categories": ["Mechanism", "Higher-Risk Setting", "Prevention or Management"],
